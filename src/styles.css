@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f2f6;
+  color: #222;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.encabezado h1 {
+  margin: 0 0 22px;
+  color: #536fd0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  align-items: start;
+  gap: 28px;
+}
+
+.lista-personajes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 230px));
+  gap: 16px 18px;
+  align-items: stretch;
+}
+
+.personaje-card {
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 11px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  min-width: 0;
+}
+
+.personaje-card.seleccionado {
+  border-color: #f2d94e;
+}
+
+.personaje-imagen {
+  display: block;
+  width: 100%;
+  height: 226px;
+  object-fit: cover;
+}
+
+.personaje-info {
+  padding: 9px 8px 12px;
+}
+
+.personaje-info h2 {
+  margin: 0 0 3px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.personaje-info p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.vivo {
+  color: #397c35;
+}
+
+.muerto {
+  color: #c43c4b;
+}
+
+.desconocido {
+  color: #777;
+}
+
+.boton-favorito,
+.panel-favoritos button,
+.error button {
+  border: 0;
+  border-radius: 5px;
+  background: #536fd5;
+  color: #fff;
+  padding: 10px 13px;
+  font-size: 14px;
+}
+
+.boton-favorito:hover,
+.panel-favoritos button:hover,
+.error button:hover {
+  background: #405bbd;
+}
+
+.panel-favoritos {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.panel-favoritos h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+.panel-favoritos h2 span {
+  color: #536fd5;
+}
+
+.panel-favoritos ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.panel-favoritos li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 9px 0;
+  min-width: 0;
+}
+
+.panel-favoritos li img {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.panel-favoritos li span {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.panel-favoritos button {
+  padding: 8px 10px;
+  flex: 0 0 auto;
+}
+
+.sin-favoritos {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.mensaje {
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  max-width: 600px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #fff;
+  color: #b3261e;
+}
+
+@media (max-width: 1100px) {
+  .contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-personajes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .panel-favoritos {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .app {
+    padding: 12px;
+  }
+
+  .encabezado h1 {
+    font-size: 25px;
+  }
+
+  .lista-personajes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .personaje-imagen {
+    height: 170px;
+  }
+
+  .personaje-info h2,
+  .personaje-info p {
+    font-size: 14px;
+  }
+
+  .boton-favorito {
+    width: 100%;
+    padding: 9px 5px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .lista-personajes {
+    grid-template-columns: 1fr;
+  }
+
+  .personaje-imagen {
+    height: 230px;
+  }
+}
+.zona-principal { min-width: 0; }
+.zona-principal .lista-personajes { width: 100%; }
